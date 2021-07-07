@@ -15,12 +15,13 @@ class FilterString extends Component {
         this.setState({userInput:num})
     }
 
-    filterNames(userInput) {
-    let names =this.setState.state.names
+   filterNames(userInput) {
+    let inputFix = userInput[0].toUpperCase() + userInput.slice(1);
+    let names =this.state.names
     let filteredNames =[]
 
     for ( let i = 0; i < names.length; i++ ) {
-        if ( names[i].includes(userInput) ) {
+        if ( names[i].includes(inputFix) ) {
           filteredNames.push(names[i]);
         }
     }
